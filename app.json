@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "inatel-app-challenge",
-    "slug": "inatel-app-challenge",
+    "name": "inate-app-challenge",
+    "slug": "inate-app-challenge",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
