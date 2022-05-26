@@ -4,9 +4,10 @@ import {createSlice} from "@reduxjs/toolkit";
 
 // Inicializa os estados, basicamente mostrará no nosso contexto
 // Onde está a pessoa que deseja contratar o serviço
-const inicializaEstado={
+const initialState={
     origin : null,
-    selectProviders:null,
+    destination:null,
+    travelTimeInformation:null
 
 }
 
@@ -20,8 +21,11 @@ export const navSlice=createSlice({
         setOrigin:(state,action) =>{
             state.origin=action.payload;
         },
-        setProvider:(state,action)=>{
-            state.selectProviders=action.payload;
+        setDestination:(state,action)=>{
+            state.destination=action.payload;
+        },
+        setTravelTimeInformation:(state,action)=>{
+            state.travelTimeInformation=action.payload;
         }
     }
 
@@ -29,11 +33,12 @@ export const navSlice=createSlice({
 
 // Exportanto todas as informações para fora do arquivo
 
-export const {setOrigin,setProvider}
+export const {setOrigin,setDestination,setTravelTimeInformation}
 =navSlice.actions;
 
 // Selectors 
 export const selectOrigin=(state)=>state.nav.origin;
-export const selectProvider=(state)=>state.nav.selectProvider;
+export const selectDestination=(state)=>state.nav.destination;
+export const selectSetTravelTimeInformation=(state)=>state.nav.travelTimeInformation;
 
 export default navSlice.reducer;
