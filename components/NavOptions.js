@@ -1,5 +1,5 @@
 import React from "react";
-import{StyleSheet,Text,SafeAreaView,Image,View} from "react-native";
+import{Text,Image,View} from "react-native";
 import {FlatList, TouchableOpacity } from "react-native-gesture-handler";
 import tw from 'tailwind-react-native-classnames';
 import {Icon} from 'react-native-elements';
@@ -27,17 +27,17 @@ const NavOptions=()=>{
             renderItem={({item})=>(
                 <TouchableOpacity 
                 onPress={()=>navigation.navigate(item.screen)}
-                style={tw `p-2 pl-6 pb-4 bg-gray-200 m-2 w-40`}>
+                style={tw `p-1 pl-3 pb-4 bg-gray-50 m-1 w-40`}>
                     
                     <View>
                         <Image
-                            style={{width:100,height:100,resizeMode:"contain"}}
+                            style={{width:50,height:50,resizeMode:"contain"}}
                             source={{uri:item.image}}
                         />
                     </View>
                     <Text style={tw `mt-2 text-lg font-semibold`}>{item.title}</Text>
                     <Icon 
-                    style={tw `p-2 bg-white rounded-full  w-10 mt-4`}
+                    style={tw `p-2 bg-white rounded-full  w-10 mt-2`}
                     name="arrowright" color="black" type="antdesign"/>
                 </TouchableOpacity>
             )}
