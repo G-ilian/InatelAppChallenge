@@ -8,6 +8,7 @@ import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { createStackNavigator} from '@react-navigation/stack';
+import PlansScreen from './screens/PlansScreen';
 
 export default function App() {
   const Stack=createStackNavigator();
@@ -33,6 +34,14 @@ export default function App() {
               }}
               />
           </Stack.Navigator>
+
+          <Stack.Screen 
+              name='PlansScreen'
+              component={PlansScreen}
+              options={{
+                headerShown:false,
+              }}
+            />
           
         </SafeAreaProvider>  
       </NavigationContainer>
