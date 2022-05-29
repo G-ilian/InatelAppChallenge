@@ -9,6 +9,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { createStackNavigator} from '@react-navigation/stack';
 import PlansScreen from './screens/PlansScreen';
+import InstaladoresScreen from './screens/InstaladoresScreen';
 
 export default function App() {
   const Stack=createStackNavigator();
@@ -33,15 +34,25 @@ export default function App() {
                 headerShown:false,
               }}
               />
-          </Stack.Navigator>
 
-          <Stack.Screen 
+            <Stack.Screen 
               name='PlansScreen'
               component={PlansScreen}
               options={{
                 headerShown:false,
               }}
             />
+
+            <Stack.Screen 
+              name='InstaladoresScreen'
+              component={InstaladoresScreen}
+              options={{
+                headerShown:false,
+              }}
+            />
+          </Stack.Navigator>
+
+
           
         </SafeAreaProvider>  
       </NavigationContainer>
