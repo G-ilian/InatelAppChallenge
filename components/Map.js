@@ -3,7 +3,7 @@ import { StyleSheet,Text, View } from 'react-native';
 import MapView,{marker} from 'react-native-maps';
 import { useSelector } from 'react-redux';
 import tw from 'tailwind-react-native-classnames';
-import { selectOrigin } from '../slices/navSlice';
+import { selectDestination, selectOrigin } from '../slices/navSlice';
 
 const Map=()=>{
     const origin=useSelector(selectOrigin);
@@ -14,7 +14,7 @@ const Map=()=>{
         initialRegion={{
           latitude: origin.location.lat,
           longitude: origin.location.lng,
-          latitudeDelta: 0.0922,
+          latitudeDelta: 0.005,
           longitudeDelta: 0.005,
         }}
       />
