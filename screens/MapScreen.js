@@ -5,7 +5,7 @@ import {GOOGLE_MAPS_APIKEY} from "@env";
 import MapView from 'react-native-maps';
 import tw from 'tailwind-react-native-classnames';
 import Map from "../components/Map";
-import UserOptions from "../components/UsersOptions";
+import UsersOptions from "./UsersScreen";
 import { createStackNavigator } from "@react-navigation/stack";
 import NavigateCard from "../components/NavigateCard";
 
@@ -21,18 +21,10 @@ const MapScreen=()=>{
             <View style={tw `h-1/2`}>
 
             <Stack.Navigator>
-
-                <Stack.Screen
-                    name="Navigate Card"
-                    component={NavigateCard}
-                    options={{
-                        headerShown:false,
-                    }}
-                />
                 
                 <Stack.Screen
-                    name="User Options"
-                    component={UserOptions}
+                    name="Users Options"
+                    component={UsersOptions}
                     options={{
                         headerShown:false,
                     }}
