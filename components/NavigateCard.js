@@ -8,7 +8,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import {GOOGLE_MAPS_APIKEY} from "@env";
 import { useDispatch } from "react-redux";
-import { setOrigin } from "../slices/navSlice";
+import { setDestination, setOrigin } from "../slices/navSlice";
+
 
 const NavigateCard =()=>{
     const navigation=useNavigation();
@@ -25,14 +26,15 @@ const NavigateCard =()=>{
                     debounce={400}
                     returnKeyType={"search"}
                     minLength={2}
+                    fetchDetails={true}
                     onPress={(data,details=null)=>{
-                        dispatch(setOrigin({
+                        dispatch(setDestination({
                             location:details.geometry.location,
                             description:data.description,
                         })
                             
                         );
-                        navigation.navigate('UsersOptions')
+                        //navigation.navigate("Users Options")
                     }}
                     query={{
                         key:GOOGLE_MAPS_APIKEY,
